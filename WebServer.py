@@ -4,6 +4,7 @@ Handling of requests is delegated to a "request handler" class that is passed
 in on initialisation.
 """
 from socket import socket, AF_INET, SOCK_STREAM, SOL_SOCKET, SO_REUSEADDR
+from RequestHandler import RequestHandler
 
 
 class WebServer:
@@ -32,10 +33,11 @@ class WebServer:
         self.request_handler = request_handler_type()
 
         # Setup the socket
-        self.listen_socket = socket(self.ADDRESS_FAMILY, self.SOCKET_TYPE)
-        self.listen_socket.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
-        self.listen_socket.bind((self.HOST, self.PORT))
-        self.listen_socket.listen(1)
+        listen_socket = socket(self.ADDRESS_FAMILY, self.SOCKET_TYPE)
+        listen_socket.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
+        listen_socket.bind((self.HOST, self.PORT))
+        listen_socket.listen(self.REQUEST_QUEUE_SIZE)
+        self.listen_socket = listen_socket
 
     def _handle_request(self, client):
         """Handle a single request from the client.
@@ -60,3 +62,8 @@ class WebServer:
             client_connection, client_address = self.listen_socket.accept()
             print("Request made from {}".format(client_address))
             self._handle_request(client_connection)
+
+
+if __name__ == "__main__":
+    server = WebServer(RequestHandler)
+    server.serve_forever()
