@@ -23,7 +23,7 @@ class WebServer:
 
         Args:
             request_handler_type (class): A class type that can parse client
-            requests and generate appropriate requests.
+            requests and generate an appropriate repsonse.
         """
         if request_handler_type is None:
             raise Exception("Error: Must pass a request_handler_type")
