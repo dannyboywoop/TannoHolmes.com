@@ -20,7 +20,6 @@ class HTTPRequest:
         # attempt to separate request line into 3 strings.
         request = request_line.strip().split(" ")
         if len(request) != 3:
-            print(request_line)
             raise Exception("Invalid HTTP Request-Line!")
         method, self.request_uri, self.http_version = request
 
