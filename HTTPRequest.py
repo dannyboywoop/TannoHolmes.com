@@ -58,8 +58,6 @@ class HTTPRequest:
         if not end_of_headers:
             raise Exception("No end-of-header line found!")
 
-        print("Request parsed.")
-
     def __str__(self):
         # convert request-line
         string = "Method: {0}, URI: {1}, Version: {2}\n"

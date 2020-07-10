@@ -4,6 +4,7 @@ Handling of requests is delegated to a "request handler" class that is passed
 in on initialisation.
 """
 from socket import socket, AF_INET, SOCK_STREAM, SOL_SOCKET, SO_REUSEADDR
+from threading import Thread
 from RequestHandler import RequestHandler
 from HTTPResponse import HTTPResponse
 from HTTPRequest import HTTPRequest
@@ -19,54 +20,14 @@ class WebServer:
     ADDRESS_FAMILY = AF_INET  # ipv4 addresses
     SOCKET_TYPE = SOCK_STREAM  # TCP socket
     REQUEST_QUEUE_SIZE = 1  # only 1 connection handled at a time
-    BUFFER_SIZE = 1024  # somewhat arbitrary
 
-    def __init__(self, request_handler_type):
-        """Create a TCP socket and a request handler.
-
-        Args:
-            request_handler_type (class): A class type that can parse client
-            requests and generate an appropriate repsonse.
-        """
-        if request_handler_type is None:
-            raise Exception("Error: Must pass a request_handler_type")
-
-        # instantiate the request_handler_type
-        self.request_handler = request_handler_type()
-
-        # Setup the socket
+    def __init__(self):
+        """Create a TCP socket."""
         listen_socket = socket(self.ADDRESS_FAMILY, self.SOCKET_TYPE)
         listen_socket.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
         listen_socket.bind((self.HOST, self.PORT))
         listen_socket.listen(self.REQUEST_QUEUE_SIZE)
         self.listen_socket = listen_socket
-
-    def _handle_request(self, client):
-        """Handle a single request from the client.
-
-        Recieve data from the client, generate an appropriate response,
-        send the response and close the connection.
-
-        Args:
-            client (socket): A socket object, currently accepting a connection
-                from the client.
-        """
-        request_data = client.recv(self.BUFFER_SIZE)
-        print("Data recieved.")
-
-        # try to parse as a HTTPRequest
-        try:
-            request = HTTPRequest(request_data)
-        except Exception as msg:
-            # generate response to invalid request
-            response = HTTPResponse(400, str(msg))
-        else:
-            # generate response to valid request
-            response = self.request_handler.generate_response(request)
-
-        client.sendall(response.create_http_response())
-        print("Response sent.")
-        client.close()
 
     def serve_forever(self):
         """Continually accept and respond to client requests."""
@@ -74,9 +35,68 @@ class WebServer:
         while True:
             client_connection, client_address = self.listen_socket.accept()
             print("Request made from {}".format(client_address))
-            self._handle_request(client_connection)
+            ct = WebServer.ClientThread(client_connection, client_address)
+            ct.start()
+
+    class ClientThread(Thread):
+
+        BUFFER_SIZE = 4096  # somewhat arbitrary
+
+        def __init__(self, client, address):
+            """Initialise a thread to handle a client request.
+
+            Args:
+                client (socket): A socket object, currently accepting a
+                connection from the client.
+            """
+            Thread.__init__(self, daemon=True)
+            self.client = client
+            self.address = address
+            self.request_handler = RequestHandler()
+
+        def _recieve_data(self):
+            """Read all available bytes from the buffer."""
+            request_data = b""
+            while True:
+                new_data = self.client.recv(self.BUFFER_SIZE)
+                request_data += new_data
+
+                # TODO - this needs work! leads to a hung state if the total
+                # request data happens to be a multiple of the BUFFER_SIZE
+                if len(new_data) < self.BUFFER_SIZE:
+                    break
+            self.request_data = request_data
+            print("Data recieved from {}".format(self.address))
+
+        def _generate_response(self):
+            """Generate a response to the client request"""
+            # attempt to parse the request as a HTTPRequest
+            try:
+                request = HTTPRequest(self.request_data)
+            except Exception as msg:
+                # generate response to invalid request
+                response = HTTPResponse(400, str(msg))
+            else:
+                # generate response to valid request
+                response = self.request_handler.generate_response(request)
+            self.response = response.create_http_response()
+
+        def run(self):
+            """Handle a single request from the client.
+
+            Recieve data from the client, generate an appropriate response,
+            send the response and close the connection.
+
+            """
+            self._recieve_data()
+            self._generate_response()
+
+            # send response and close the connection
+            self.client.sendall(self.response)
+            print("Response sent to {}".format(self.address))
+            self.client.close()
 
 
 if __name__ == "__main__":
-    server = WebServer(RequestHandler)
+    server = WebServer()
     server.serve_forever()
