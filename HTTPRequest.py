@@ -12,6 +12,7 @@ class HTTPRequest:
         CONNECT = "CONNECT"
         OPTIONS = "OPTIONS"
         TRACE = "TRACE"
+        PATCH = "PATCH"
 
     HTTP_METHOD_STRINGS = set(item.value for item in HTTPMethod)
 
