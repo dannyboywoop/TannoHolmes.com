@@ -5,6 +5,8 @@ in on initialisation.
 """
 from socket import socket, AF_INET, SOCK_STREAM, SOL_SOCKET, SO_REUSEADDR
 from RequestHandler import RequestHandler
+from HTTPResponse import HTTPResponse
+from HTTPRequest import HTTPRequest
 
 
 class WebServer:
@@ -50,8 +52,19 @@ class WebServer:
                 from the client.
         """
         request_data = client.recv(self.BUFFER_SIZE)
-        response = self.request_handler.generate_response(request_data)
-        client.sendall(response)
+        print("Data recieved.")
+
+        # try to parse as a HTTPRequest
+        try:
+            request = HTTPRequest(request_data)
+        except Exception as msg:
+            # generate response to invalid request
+            response = HTTPResponse(400, str(msg))
+        else:
+            # generate response to valid request
+            response = self.request_handler.generate_response(request)
+
+        client.sendall(response.create_http_response())
         print("Response sent.")
         client.close()
 
