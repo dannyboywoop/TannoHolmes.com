@@ -12,7 +12,10 @@ class HTTPResponse:
 
     def __init__(self, status_code, content, content_type="text/html"):
         self.status_code = status_code
-        self.content = content
+        if isinstance(content, str):
+            self.content = content.encode("utf-8")
+        else:
+            self.content = content
         self.headers = {
             "Content-Type": content_type,
             "Content-Length": str(len(content))
@@ -32,12 +35,13 @@ class HTTPResponse:
         for header_field, header_value in self.headers.items():
             response += "{0}: {1}\r\n".format(header_field, header_value)
 
-        # add end-of-header line
+        # add end-of-header line and encode to utf-8
         response += "\r\n"
+        response = response.encode("utf-8")
 
         # add content, if there is any
         if self.content is not None:
             response += self.content
 
         # encode and return
-        return response.encode("utf-8")
+        return response
