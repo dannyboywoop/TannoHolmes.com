@@ -1,7 +1,6 @@
 """Module containing a simple web server for communication via a TCP Socket.
 
-Handling of requests is delegated to a "request handler" class that is passed
-in on initialisation.
+Handling of requests is delegated to a "request handler" class.
 """
 from socket import socket, AF_INET, SOCK_STREAM, SOL_SOCKET, SO_REUSEADDR
 from threading import Thread
@@ -39,6 +38,7 @@ class WebServer:
             ct.start()
 
     class ClientThread(Thread):
+        """Class to handle a client request on a single thread."""
 
         BUFFER_SIZE = 4096  # somewhat arbitrary
 
@@ -47,7 +47,9 @@ class WebServer:
 
             Args:
                 client (socket): A socket object, currently accepting a
-                connection from the client.
+                    connection from the client.
+                address (tuple): A tuple containing the IP and port of the
+                    connected client.
             """
             Thread.__init__(self, daemon=True)
             self.client = client
@@ -69,7 +71,7 @@ class WebServer:
             print("Data recieved from {}".format(self.address))
 
         def _generate_response(self):
-            """Generate a response to the client request"""
+            """Generate a response to the client request."""
             # attempt to parse the request as a HTTPRequest
             try:
                 request = HTTPRequest(self.request_data)
