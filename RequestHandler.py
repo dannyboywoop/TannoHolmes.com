@@ -20,22 +20,8 @@ class RequestHandler:
         # call appropriate method
         return self.METHODS[request.method](self, request)
 
-    def _add_header_to_html(self, body):
-        """Add a default header to a given html file.
-
-        Args:
-            body (string): The HTML body, onto which the header is to
-                be prepended.
-
-        Returns:
-            string: HTML containing the default header and the given body.
-        """
-        with open("root/base.html", "r") as base_file:
-            html = base_file.read().format(body)
-        return html
-
-    def _handle_html(self, full_path, extension):
-        """Create a response from a .html file.
+    def _handle_file(self, full_path, content_type, extension):
+        """Create a response from a file.
 
         Args:
             full_path (string): The full path to the file.
@@ -44,24 +30,10 @@ class RequestHandler:
         Returns:
             HTTPResponse: A HTTP response containing the file contents.
         """
-        with open(full_path, 'r') as html_file:
-            html = html_file.read()
-        content = self._add_header_to_html(html)
-        return HTTPResponse(200, content)
-
-    def _handle_image(self, full_path, extension):
-        """Create a response from a image file.
-
-        Args:
-            full_path (string): The full path to the file.
-            extension (string): The extension of the file.
-
-        Returns:
-            HTTPResponse: A HTTP response containing the file contents.
-        """
-        with open(full_path, "rb") as image_file:
-            image_data = image_file.read()
-        return HTTPResponse(200, image_data, "image/"+extension[1:])
+        with open(full_path, "rb") as input_file:
+            data = input_file.read()
+        print(content_type+"/"+extension[1:])
+        return HTTPResponse(200, data, content_type+"/"+extension[1:])
 
     def _find_content_path(self, uri):
         """Attempt to find a relevant file for a given URI.
@@ -105,15 +77,16 @@ class RequestHandler:
                                 "Failed to find {}".format(request.request_uri)
                                 )
 
-        # check if appropriate file handler exists
+        # check if content-type is known
         file_extension = path.splitext(full_path)[1]
-        if file_extension not in self.FILE_HANDLERS:
-            response = "No appropriate file handler for {}"
-            return HTTPResponse(501, response.format(file_extension))
+        if file_extension not in self.FILE_TYPES:
+            response = "Unknown content-type: {}".format(file_extension)
+            return HTTPResponse(501, response)
 
-        return self.FILE_HANDLERS[file_extension](self,
-                                                  full_path,
-                                                  file_extension)
+        return self._handle_file(full_path,
+                                 self.FILE_TYPES[file_extension],
+                                 file_extension
+                                 )
 
     def _do_HEAD(self, request):
         """Attempt to respond to a HTTP GET request.
@@ -223,8 +196,9 @@ class RequestHandler:
         HTTPRequest.HTTPMethod.PATCH: _do_PATCH
     }
 
-    FILE_HANDLERS = {
-        ".html": _handle_html,
-        ".png": _handle_image,
-        ".ico": _handle_image
+    FILE_TYPES = {
+        ".html": "text",
+        ".css": "text",
+        ".png": "image",
+        ".ico": "image"
     }
