@@ -19,7 +19,7 @@ class WebServer:
     HOST, PORT = '', 8080  # localhost port 8080
     ADDRESS_FAMILY = AF_INET  # ipv4 addresses
     SOCKET_TYPE = SOCK_STREAM  # TCP socket
-    REQUEST_QUEUE_SIZE = 1  # only 1 connection handled at a time
+    REQUEST_QUEUE_SIZE = 5  # only 1 connection handled at a time
 
     def __init__(self):
         """Create a TCP socket."""
