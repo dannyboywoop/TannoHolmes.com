@@ -44,7 +44,7 @@ class RequestHandler:
             string: A path to the file, if one was found.
                 Otherwise, returns None.
         """
-        full_path = getcwd() + "/root/" + uri
+        full_path = getcwd() + "/www_root/" + uri
 
         # check if it is a folder containing index.html
         index_path = path.join(full_path, 'index.html')
