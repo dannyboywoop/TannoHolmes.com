@@ -32,7 +32,6 @@ class RequestHandler:
         """
         with open(full_path, "rb") as input_file:
             data = input_file.read()
-        print(content_type+"/"+extension[1:])
         return HTTPResponse(200, data, content_type+"/"+extension[1:])
 
     def _find_content_path(self, uri):

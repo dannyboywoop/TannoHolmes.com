@@ -3,6 +3,7 @@
 Handling of requests is delegated to a "request handler" class.
 """
 from socket import socket, AF_INET, SOCK_STREAM, SOL_SOCKET, SO_REUSEADDR
+import select
 from threading import Thread
 from RequestHandler import RequestHandler
 from HTTPResponse import HTTPResponse
@@ -41,6 +42,7 @@ class WebServer:
         """Class to handle a client request on a single thread."""
 
         BUFFER_SIZE = 4096  # somewhat arbitrary
+        READ_TIMEOUT = 2  # 1 seconds
 
         def __init__(self, client, address):
             """Initialise a thread to handle a client request.
@@ -58,14 +60,23 @@ class WebServer:
 
         def _recieve_data(self):
             """Read all available bytes from the buffer."""
+            self.client.setblocking(0)
+
             request_data = b""
             while True:
-                new_data = self.client.recv(self.BUFFER_SIZE)
-                request_data += new_data
+                # check if there is data to be read
+                ready = select.select([self.client], [], [], self.READ_TIMEOUT)
+                if ready[0]:
+                    # read new data
+                    new_data = self.client.recv(self.BUFFER_SIZE)
+                    request_data += new_data
 
-                # TODO - this needs work! leads to a hung state if the total
-                # request data happens to be a multiple of the BUFFER_SIZE
-                if len(new_data) < self.BUFFER_SIZE:
+                    if len(new_data) < self.BUFFER_SIZE:
+                        break
+
+                # if no new data in the timeout, but some data already
+                # recieved, then exit assuming full message has been recieved
+                elif request_data:
                     break
             self.request_data = request_data
             print("Data recieved from {}".format(self.address))
