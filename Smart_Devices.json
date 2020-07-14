@@ -1,0 +1,28 @@
+{
+    "endpoints": [
+        {
+            "endpointId": "smart_blind_01",
+            "manufacturerName": "Tanno Holmes Ideas",
+            "description": "A custom smart blind.",
+            "friendlyName": "Blinds",
+            "displayCategories": ["INTERIOR_BLIND"],
+            "capabilities": [
+                {
+                    "type": "AlexaInterface",
+                    "interface": "Alexa",
+                    "version": "3"
+                },
+                {
+                    "type": "AlexaInterface",
+                    "interface": "Alexa.PercentageController",
+                    "version": "3",
+                    "properties": {
+                        "supported": [{"name": "percentage"}],
+                        "proactivelyReported": false,
+                        "retrievable": true
+                    }
+                }
+            ]
+        }
+    ]
+}
