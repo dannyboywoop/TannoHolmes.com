@@ -8,7 +8,6 @@ from os import getcwd, path
 class RequestHandler:
     """Class used to create a HTTPResponse for a HTTPRequest object."""
 
-    SMART_HOME_KEY = "/smarthome/"
     smart_device_handler = SmartDeviceHandler()
 
     def generate_response(self, request):
@@ -111,7 +110,8 @@ class RequestHandler:
         Returns:
             HTTPResponse: A valid HTTP response to the request.
         """
-        if request.request_uri.startswith(self.SMART_HOME_KEY):
+        if request.request_uri.startswith(
+                self.smart_device_handler.SMART_HOME_KEY):
             return self.smart_device_handler.handle_request(request)
 
     def _do_PUT(self, request):
