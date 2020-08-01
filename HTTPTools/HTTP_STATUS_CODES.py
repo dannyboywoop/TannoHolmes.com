@@ -1,7 +1,7 @@
 """Module containing a dictionary of HTML status codes and phrases."""
 
 
-HTML_STATUS_CODES = {
+HTTP_STATUS_CODES = {
         100: "Continue",
         101: "Switching Protocols",
         102: "Processing",

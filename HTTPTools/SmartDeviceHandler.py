@@ -6,7 +6,7 @@ from HTTPResponse import HTTPResponse
 class SmartDeviceHandler():
 
     SMART_HOME_KEY = "/smarthome/"
-    DEVICES_FILE = "Smart_Devices/Smart_Devices.json"
+    DEVICES_FILE = "../Smart_Devices/Smart_Devices.json"
 
     def __init__(self):
         self.device_file_lock = Lock()

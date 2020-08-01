@@ -5,9 +5,9 @@ Handling of requests is delegated to a "request handler" class.
 from socket import socket, AF_INET, SOCK_STREAM, SOL_SOCKET, SO_REUSEADDR
 import select
 from threading import Thread
-from RequestHandler import RequestHandler
-from HTTPResponse import HTTPResponse
-from HTTPRequest import HTTPRequest
+from HTTPTools.RequestHandler import RequestHandler
+from HTTPTools.HTTPResponse import HTTPResponse
+from HTTPTools.HTTPRequest import HTTPRequest
 
 
 class WebServer:
