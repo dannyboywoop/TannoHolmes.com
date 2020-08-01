@@ -2,8 +2,6 @@
     "endpoints": [
         {
             "endpointId": "smart_blind_01",
-            "endpoint_IP": "192.168.1.200",
-            "endpoint_PORT": "9090",
             "manufacturerName": "Tanno Holmes Ideas",
             "description": "A custom smart blind.",
             "friendlyName": "Blinds",

@@ -1,0 +1,23 @@
+{
+    "properties": [
+        {
+            "name": "rangeValue",
+            "instance": "Blind.Position",
+            "value": {
+                "min": 0,
+                "max": 100,
+                "current": 50
+            },
+            "controller":{
+                "eval": "AutoBlind.BlindController(AutoBlind.Controllers.ArduinoController,{})",
+                "params": {
+                    "max_angle": 360,
+                    "mac_address": "24:62:AB:BA:0C:66",
+                    "characteristic": "fd5db22e-cb57-11ea-87d0-0242ac130003"
+                },
+                "setter": "set_percentage({})",
+                "setter_needs_state": true
+            }
+        }
+    ]
+}

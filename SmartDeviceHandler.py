@@ -6,7 +6,7 @@ from HTTPResponse import HTTPResponse
 class SmartDeviceHandler():
 
     SMART_HOME_KEY = "/smarthome/"
-    DEVICES_FILE = "Smart_Devices.json"
+    DEVICES_FILE = "Smart_Devices/Smart_Devices.json"
 
     def __init__(self):
         self.device_file_lock = Lock()
@@ -31,11 +31,6 @@ class SmartDeviceHandler():
 
     def _run_discovery(self):
         device_data = self._load_devices()
-
-        # remove device IP and PORT data
-        for endpoint in device_data["endpoints"]:
-            endpoint.pop("endpoint_IP")
-            endpoint.pop("endpoint_PORT")
         return HTTPResponse(200, dumps(device_data), "text/json")
 
     def _run_status_check(self, request_body):

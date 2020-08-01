@@ -1,0 +1,102 @@
+{
+    "endpoint":{
+        "endpointId": "INVALID",
+        "manufacturerName": "Tanno Holmes Ideas",
+        "description": "A custom smart blind.",
+        "friendlyName": "INVALID",
+        "displayCategories": ["INTERIOR_BLIND"],
+        "capabilities": [
+            {
+                "type": "AlexaInterface",
+                "interface": "Alexa",
+                "version": "3"
+            },{
+                "type": "AlexaInterface",
+                "interface": "Alexa.RangeController",
+                "instance": "Blind.Position",
+                "version": "3",
+                "properties": {
+                    "supported": [{"name": "rangeValue"}],
+                    "proactivelyReported": false,
+                    "retrievable": true
+                },
+                "capabilityResources": {
+                    "friendlyNames": [
+                        {
+                        "@type": "asset",
+                        "value": {"assetId": "Alexa.Setting.Opening"}
+                        }
+                    ]
+                },
+                "configuration": {
+                    "supportedRange": {
+                        "minimumValue": 0,
+                        "maximumValue": 100,
+                        "precision": 1
+                    },
+                    "unitOfMeasure": "Alexa.Unit.Percent"
+                },
+                "semantics": {
+                    "actionMappings": [
+                        {
+                            "@type": "ActionsToDirective",
+                            "actions": [
+                                "Alexa.Actions.Close",
+                                "Alexa.Actions.Lower"
+                            ],
+                            "directive": {
+                                "name": "SetRangeValue",
+                                "payload": {"rangeValue": 0}
+                            }
+                        },{
+                            "@type": "ActionsToDirective",
+                            "actions": [
+                                "Alexa.Actions.Open",
+                                "Alexa.Actions.Raise"
+                            ],
+                            "directive": {
+                                "name": "SetRangeValue",
+                                "payload": {"rangeValue": 100}
+                            }
+                        }
+                    ],
+                    "stateMappings": [
+                        {
+                            "@type": "StatesToValue",
+                            "states": ["Alexa.States.Closed"],
+                            "value": 0
+                        },{
+                            "@type": "StatesToRange",
+                            "states": ["Alexa.States.Open"],
+                            "range": {
+                                "minimumValue": 1,
+                                "maximumValue": 100
+                            }
+                        }  
+                    ]
+                }
+            }
+        ]
+    },
+    "properties": [
+        {
+            "name": "rangeValue",
+            "instance": "Blind.Position",
+            "value": {
+                "min": 0,
+                "max": 100,
+                "current": 0
+            },
+            "controller":{
+                "eval": "AutoBlind.BlindController(AutoBlind.Controllers.ArduinoController,{})",
+                "params": {
+                    "max_angle": 0,
+                    "mac_address": "INVALID",
+                    "characteristic": "INVALID"
+                },
+                "setter": "set_percentage({})",
+                "setter_needs_state": true
+            }
+        }
+    ]
+}
