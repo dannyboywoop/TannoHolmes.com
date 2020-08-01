@@ -1,7 +1,7 @@
 """Module used to handle and respond to HTTP requests."""
-from HTTPResponse import HTTPResponse
-from HTTPRequest import HTTPRequest
-from SmartDeviceHandler import SmartDeviceHandler
+from .HTTPResponse import HTTPResponse
+from .HTTPRequest import HTTPRequest
+from .SmartDeviceHandler import SmartDeviceHandler
 from os import getcwd, path
 
 

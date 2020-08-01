@@ -1,5 +1,5 @@
 """Module containing a class used to generate a valid HTTP response."""
-from HTTP_STATUS_CODES import HTTP_STATUS_CODES
+from .HTTP_STATUS_CODES import HTTP_STATUS_CODES
 
 
 class HTTPResponse:
