@@ -79,6 +79,7 @@ class WebServer:
                 elif request_data:
                     break
             self.request_data = request_data
+            self.client.setblocking(1)
             print("Data recieved from {}".format(self.address))
 
         def _generate_response(self):
