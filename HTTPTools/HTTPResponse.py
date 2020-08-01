@@ -1,5 +1,5 @@
 """Module containing a class used to generate a valid HTTP response."""
-from HTML_STATUS_CODES import HTML_STATUS_CODES
+from HTTP_STATUS_CODES import HTTP_STATUS_CODES
 
 
 class HTTPResponse:
@@ -16,7 +16,7 @@ class HTTPResponse:
             content_type (string): The MIME type of the content.
                 Default is "text/html".
         """
-        if status_code not in HTML_STATUS_CODES:
+        if status_code not in HTTP_STATUS_CODES:
             raise Exception("Unknown status code.")
 
         self.status_code = status_code
@@ -52,7 +52,7 @@ class HTTPResponse:
         response = "{0} {1} {2}\r\n"
         response = response.format(self.HTTP_VERSION,
                                    self.status_code,
-                                   HTML_STATUS_CODES[self.status_code])
+                                   HTTP_STATUS_CODES[self.status_code])
 
         # add headers
         for header_field, header_value in self.headers.items():
