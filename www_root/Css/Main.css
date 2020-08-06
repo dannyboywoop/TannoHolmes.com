@@ -1,0 +1,52 @@
+/* Main Css for the Website, to be placed first in style sheet links in head of
+each page. More specific style sheet links to be placed bellow in order of
+granularity */
+
+html{
+  /* Colours */
+  background-color: rgb(255, 255, 255);
+
+  /* Font */
+  font-family: 'Source Code Pro', monospace;
+
+  /*Centering*/
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  height:100%;
+}
+
+body{
+  /* Colours */
+  background-color: rgb(255, 255, 255);
+
+  /* Borders */
+  border-left: 2px solid rgb(210, 210, 210);
+  border-right: 2px solid rgb(210, 210, 210);
+
+  /* Centering */
+  width: 90%;
+
+}
+
+header{
+  /* Borders */
+  border-bottom: 2px solid rgb(210, 210, 210);
+
+  /* Centering */
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%;
+}
+
+main{
+  /* Centering */
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%;
+}
