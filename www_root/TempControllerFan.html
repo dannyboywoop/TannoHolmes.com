@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>MathJax example</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+<p>
+Noting that \(V_{out} = V_{k}\), and that the current will be constant throughout the circuit,
+  the proportionality of voltage and resistance stated in <a href="https://en.wikipedia.org/wiki/Ohm%27s_law">Ohms's Law</a> leads to,
+  \[
+  {V_{out} \over V_{ref}} = {R_k \over R_k + R_T}.
+  \]
+  This can be rearranged into an equation for \(R_T\) as follows,
+  \[
+  \begin{align}
+  R_k + R_T &= {{R_kV_{ref}} \over {V_{out}}}\\
+  R_T &= {{R_kV_{ref}} \over {V_{out}}} - R_k \tag{1}\label{eq:resistance_general}
+  \end{align}
+  \]
+</p>
+  <p>
+    The voltage meaured by the Arduino is converted into a 10 bit ADC value, with 0 representing 0V
+    and 1023 representing the reference voltage of 5V. This can be decribed by,
+    \[
+    ADC = {{V_{out}}\over{V_{ref}}} \times 1023 \tag{2}.
+    \]
+  Plugging this into equation \eqref{eq:resistance_general} yields,
+  \[
+  R_T = \left({1023 \over ADC} - 1\right)\cdot R_k \tag{3}\label{eq:resistance}.
+  \]
+
+  </p>
+<p>
+  Now that we have an equation for the resistance of the thermistor, we can attempt convert this into a temperature.
+  In an ideal world this would be done by taking measurements at known temperatures, attempting to fit the results to the <a href="https://en.wikipedia.org/wiki/Steinhart%E2%80%93Hart_equation">Steinhart–Hart equation</a>,
+  \[
+  {1 \over T} = A + B \ln{R} + C\left(\ln{R}\right)^3,
+  \]
+  where \(T\) is the temperature in kelvin, R is the resistance in ohms and \(A,B\) and \(C\) are model parameters.
+</p>
+  <p>
+    As I don't have the equipment to accurately set or measure temperature, I opted to use a simplified equation with only one parameter.
+    The equation in question is derived from the Steinhart-Hart equation by setting \(A = \frac{1}{T_0}-\frac{1}{\beta}\ln{R_0},
+     B=\frac{1}{\beta}\) and \(C=0\). This leads to,
+    \[
+    \frac{1}{T}=\frac{1}{T_0}+\frac{1}{\beta}\ln{\frac{R}{R_0}} \tag{4}\label{eq:temp},
+    \]
+    where \(T_0\) is a reference temperature, usually 25°C (298.15 kelvin), \(R_0\) is the resistance of the thermistor
+    at the reference temperature and \(\beta\) is the sole model parameter.
+  </p>
+  <p>
+    Equation \eqref{eq:temp} can be used for NTC thermistors, like the one used in this project.
+    Most <a href="https://en.wikipedia.org/wiki/Thermistor#NTC">NTC thermistors</a> will quote values for \(\beta, T_0\) and \(R_0\) in their accompanying datasheets.
+  </p>
+  <p>We can rearrange equation \eqref{eq:temp} into an equation for \(T\) as follows,
+    \[
+    \begin{align}
+    \frac{1}{T} &=\ln{\left(\exp{\frac{1}{T_0}}\right)} + \frac{1}{\beta}\ln{\frac{R}{R_0}}\\
+    &=\frac{1}{\beta}\ln{\left(\exp{\frac{\beta}{T_0}}\right)} + \frac{1}{\beta}\ln{\frac{R}{R_0}}\\
+    &=\frac{1}{\beta}\ln{\left(\frac{R}{R_0\exp{(\frac{-\beta}{T_0})}}\right)}\\
+    T &= \frac{\beta}{\ln{\left(\frac{R}{R_\infty}\right)}} \tag{5}\label{eq:temp_resistance},
+    \end{align}
+    \]
+    where we define \(R_\infty=R_0\exp{(\frac{-\beta}{T_0})}\).
+  </p>
+</body>
+</html>
