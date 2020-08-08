@@ -72,6 +72,13 @@ nav a:hover{
   color: rgb(100, 100, 100);
 }
 
+.formal{
+  margin-left: auto;
+  margin-right: auto;
+  width:  85%;
+  text-align: justify;
+}
+
 main{
   /* Centering */
   text-align: center;
