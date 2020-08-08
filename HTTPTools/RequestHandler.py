@@ -47,7 +47,7 @@ class RequestHandler:
             string: A path to the file, if one was found.
                 Otherwise, returns None.
         """
-        full_path = getcwd() + "/www_root/" + uri
+        full_path = getcwd() + "/www_root/" + uri.lower()
 
         # check if it is a folder containing index.html
         index_path = path.join(full_path, 'index.html')
@@ -204,5 +204,9 @@ class RequestHandler:
         ".html": "text",
         ".css": "text",
         ".png": "image",
-        ".ico": "image"
+        ".ico": "image",
+        ".svg": "image",
+        ".woff": "font",
+        ".woff2": "font",
+        ".ttf": "font"
     }
