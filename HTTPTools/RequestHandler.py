@@ -23,7 +23,7 @@ class RequestHandler:
         # call appropriate method
         return self.METHODS[request.method](self, request)
 
-    def _handle_file(self, full_path, content_type, extension):
+    def _handle_file(self, full_path, content_type):
         """Create a response from a file.
 
         Args:
@@ -35,7 +35,7 @@ class RequestHandler:
         """
         with open(full_path, "rb") as input_file:
             data = input_file.read()
-        return HTTPResponse(200, data, content_type+"/"+extension[1:])
+        return HTTPResponse(200, data, content_type)
 
     def _find_content_path(self, uri):
         """Attempt to find a relevant file for a given URI.
@@ -85,10 +85,7 @@ class RequestHandler:
             response = "Unknown content-type: {}".format(file_extension)
             return HTTPResponse(501, response)
 
-        return self._handle_file(full_path,
-                                 self.FILE_TYPES[file_extension],
-                                 file_extension
-                                 )
+        return self._handle_file(full_path, self.FILE_TYPES[file_extension])
 
     def _do_HEAD(self, request):
         """Attempt to respond to a HTTP GET request.
@@ -201,12 +198,14 @@ class RequestHandler:
     }
 
     FILE_TYPES = {
-        ".html": "text",
-        ".css": "text",
-        ".png": "image",
-        ".ico": "image",
-        ".svg": "image",
-        ".woff": "font",
-        ".woff2": "font",
-        ".ttf": "font"
+        ".html": "text/html",
+        ".css": "text/css",
+        ".png": "image/png",
+        ".ico": "image/ico",
+        ".jpg": "image/jpeg",
+        ".svg": "image/svg+xml",
+        ".woff": "font/woff",
+        ".woff2": "font/woff2",
+        ".ttf": "font/tff",
+        ".webmanifest": "application/manifest+json"
     }
