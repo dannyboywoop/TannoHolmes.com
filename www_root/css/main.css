@@ -79,6 +79,47 @@ nav a:hover{
   text-align: justify;
 }
 
+img.full-width{
+  display: block;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+}
+
+img.large{
+  display: block;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+}
+
+table.parts-table{
+  border: 1px solid rgb(100, 100, 100);
+  border-collapse: collapse;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.parts-table tr, table.parts-table td{
+  text-align: left;
+  padding: 8px;
+}
+
+table.parts-table img{
+  display: block;
+  height: 100px;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.parts-table tr:nth-child(even) {
+  background-color: rgb(200, 200, 200);
+}
+
 main{
   /* Centering */
   text-align: center;
