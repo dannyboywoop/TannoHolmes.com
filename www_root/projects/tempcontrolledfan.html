@@ -19,6 +19,7 @@
 
   <!-- Style-Sheets -->
   <link rel="stylesheet" type="text/css" href="/css/main.css">
+  <link rel="stylesheet" type="text/css" href="/css/project.css">
 
   <!-- Scripts -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -40,50 +41,61 @@
     <a href="/pages/contact.html" >CONTACT ME</a>
   </nav>
 
-  <main>
-    <h2>PROJECTS</h2>
-    <h3>Temperature Controller Fan</h3>
+  <main class="project">
     <section>
-        <p>In this project I took a standard USB fan and modified it to ramp up/down based on
-            its ambient temperature.
-        </p>
+    <h2>Temperature Controller Fan</h2>
+    
+      <p>In this project I took a standard USB fan and modified it to ramp up/down based on
+          its ambient temperature.
+      </p>
     </section>
-    <section class="formal">
+    <section>
         <h3>What you'll need</h3>
         <table class="parts-table">
             <tr>
-                <td><img src="/resources/images/electronic_parts/arduino_nano.jpg" alt="Arduino Nano R3"></td>
-                <td><a href="https://store.arduino.cc/arduino-nano">Arduino Nano R3</a></td>
+                <td><img src="/resources/images/electronic_parts/arduino_nano.jpg" alt="Arduino Nano R3" class="part"></td>
+                <td>Arduino Nano R3</td>
+                <td><a href="https://store.arduino.cc/arduino-nano"><img src="/resources/images/buy_icon.png" alt="Arduino Nano R3 purchase" class="buy"></a></td>
             </tr>
             <tr>
-                <td><img src="/resources/images/electronic_parts/thermistor.jpg" alt="10k NTC Thermistor"></td>
-                <td><a href="https://www.amazon.co.uk/gp/product/B079129JZ5/">10k NTC Thermistor</a></td>
+                <td><img src="/resources/images/electronic_parts/thermistor.jpg" alt="10k NTC Thermistor" class="part"></td>
+                <td>10k NTC Thermistor</td>
+                <td><a href="https://www.amazon.co.uk/gp/product/B079129JZ5/"><img src="/resources/images/buy_icon.png" alt="10k NTC Thermistor purchase" class="buy"></a></td>
             </tr>
             <tr>
-                <td><img src="/resources/images/electronic_parts/transistor_npn.jpg" alt="General Purpose NPN Transistor"></td>
-                <td><a href="https://www.newark.com/on-semiconductor/pn2222abu/bipolar-transistor-npn-40v-to/dp/58K2047?COM=ref_hackster">General Purpose NPN Transistor</a></td>
+                <td><img src="/resources/images/electronic_parts/transistor_npn.jpg" alt="General Purpose NPN Transistor" class="part"></td>
+                <td>General Purpose NPN Transistor</td>
+                <td><a href="https://www.newark.com/on-semiconductor/pn2222abu/bipolar-transistor-npn-40v-to/dp/58K2047?COM=ref_hackster"><img src="/resources/images/buy_icon.png" alt="General Purpose NPN Transistor purchase" class="buy"></a></td>
             </tr>
             <tr>
-                <td><img src="/resources/images/electronic_parts/1k_resistor.jpg" alt="1k Resistor"></td>
-                <td><a href="https://www.newark.com/multicomp/mccfr0w4j0102a50/carbon-film-resistor-1kohm-250mw/dp/58K5001?COM=ref_hackster">1k Resistor</a></td>
+                <td><img src="/resources/images/electronic_parts/1k_resistor.jpg" alt="1k Resistor" class="part"></td>
+                <td>1k Resistor</td>
+                <td><a href="https://www.newark.com/multicomp/mccfr0w4j0102a50/carbon-film-resistor-1kohm-250mw/dp/58K5001?COM=ref_hackster"><img src="/resources/images/buy_icon.png" alt="1k Resistor purchase" class="buy"></a></td>
             </tr>
             <tr>
-                <td><img src="/resources/images/electronic_parts/10k_resistor.jpg" alt="10k Resistor"></td>
-                <td><a href="https://www.newark.com/multicomp/mccfr0w4j0103a50/carbon-film-resistor-10kohm-250mw/dp/58K5002?COM=ref_hackster">10k Resistor</a></td>
+                <td><img src="/resources/images/electronic_parts/10k_resistor.jpg" alt="10k Resistor" class="part"></td>
+                <td>10k Resistor</td>
+                <td><a href="https://www.newark.com/multicomp/mccfr0w4j0103a50/carbon-film-resistor-10kohm-250mw/dp/58K5002?COM=ref_hackster"><img src="/resources/images/buy_icon.png" alt="10k Resistor purchase" class="buy"></a></td>
             </tr>
             <tr>
-                <td><img src="/resources/images/electronic_parts/breadboard.jpg" alt="Breadboard"></td>
-                <td><a href="https://www.newark.com/bud-industries/bb-32621/breadboard-solderless-removable/dp/88W3961">Breadboard</a></td>
+                <td><img src="/resources/images/electronic_parts/breadboard.jpg" alt="Breadboard" class="part"></td>
+                <td>Breadboard</td>
+                <td><a href="https://www.newark.com/bud-industries/bb-32621/breadboard-solderless-removable/dp/88W3961"><img src="/resources/images/buy_icon.png" alt="Breadboard purchase" class="buy"></a></td>
             </tr>
             <tr>
-                <td><img src="/resources/images/electronic_parts/jumper_wires.jpg" alt="Jumper wires"></td>
-                <td><a href="https://www.newark.com/adafruit/759/wire-gauge-28awg/dp/88W2571?COM=ref_hackster">Jumper wires</a></td>
+                <td><img src="/resources/images/electronic_parts/jumper_wires.jpg" alt="Jumper wires" class="part"></td>
+                <td>Jumper wires</td>
+                <td><a href="https://www.newark.com/adafruit/759/wire-gauge-28awg/dp/88W2571?COM=ref_hackster"><img src="/resources/images/buy_icon.png" alt="Jumper wires purchase" class="buy"></a></td>
             </tr>
         </table>
     </section>
-    <section class="formal">
+    <section>
         <h3>How the temperature is measured</h3>
-        <img src="/resources/images/tempcontrolledfan_thermistor.svg" alt="Thermistor Diagram" class="large">
+        <figure>
+          <img src="/resources/images/tempcontrolledfan_thermistor.svg" alt="Thermistor Diagram" style="width:100%">
+          <figcaption>Fig.1 - Temperature sensing circuit.</figcaption>
+        </figure>
+        
       <p>
       Noting that \(V_{out} = V_{k}\), and that the current will be constant throughout the circuit,
         the proportionality of voltage and resistance stated in <a href="https://en.wikipedia.org/wiki/Ohm%27s_law">Ohms's Law</a> leads to,
@@ -111,7 +123,7 @@
 
         </p>
       <p>
-        Now that we have an equation for the resistance of the thermistor, we can attempt convert this into a temperature.
+        Now that we have an equation for the resistance of the thermistor, we can attempt to convert this into a temperature.
         In an ideal world this would be done by taking measurements at known temperatures, attempting to fit the results to the <a href="https://en.wikipedia.org/wiki/Steinhart%E2%80%93Hart_equation">Steinhart–Hart equation</a>,
         \[
         {1 \over T} = A + B \ln{R} + C\left(\ln{R}\right)^3,
