@@ -25,7 +25,8 @@ class WebServer:
     def __init__(self):
         """Create a TCP socket."""
         self.context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
-        self.context.load_cert_chain(certfile="security/public.crt", keyfile="security/private.key")
+        self.context.load_cert_chain(certfile="security/public.crt",
+                                     keyfile="security/private.key")
 
         listen_socket = socket(self.ADDRESS_FAMILY, self.SOCKET_TYPE)
         listen_socket.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
@@ -39,7 +40,8 @@ class WebServer:
         while True:
             client_socket, client_address = self.listen_socket.accept()
             try:
-                ssl_socket = self.context.wrap_socket(client_socket, server_side=True)
+                ssl_socket = self.context.wrap_socket(client_socket,
+                                                      server_side=True)
                 print("Request made from {}".format(client_address))
             except ssl.SSLError as e:
                 print(e)
