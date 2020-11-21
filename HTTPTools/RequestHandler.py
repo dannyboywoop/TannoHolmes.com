@@ -200,6 +200,7 @@ class RequestHandler:
     FILE_TYPES = {
         ".html": "text/html",
         ".css": "text/css",
+        ".txt": "text/txt",
         ".png": "image/png",
         ".ico": "image/ico",
         ".jpg": "image/jpeg",

@@ -3,8 +3,9 @@
 Handling of requests is delegated to a "request handler" class.
 """
 from socket import socket, AF_INET, SOCK_STREAM, SOL_SOCKET, SO_REUSEADDR
-import select
+from select import select
 from threading import Thread
+import ssl
 from HTTPTools.RequestHandler import RequestHandler
 from HTTPTools.HTTPResponse import HTTPResponse
 from HTTPTools.HTTPRequest import HTTPRequest
@@ -23,6 +24,9 @@ class WebServer:
 
     def __init__(self):
         """Create a TCP socket."""
+        self.context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
+        self.context.load_cert_chain(certfile="security/public.crt", keyfile="security/private.key")
+
         listen_socket = socket(self.ADDRESS_FAMILY, self.SOCKET_TYPE)
         listen_socket.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
         listen_socket.bind((self.HOST, self.PORT))
@@ -33,10 +37,15 @@ class WebServer:
         """Continually accept and respond to client requests."""
         print("Serving on port {} ...".format(self.PORT))
         while True:
-            client_connection, client_address = self.listen_socket.accept()
-            print("Request made from {}".format(client_address))
-            ct = WebServer.ClientThread(client_connection, client_address)
-            ct.start()
+            client_socket, client_address = self.listen_socket.accept()
+            try:
+                ssl_socket = self.context.wrap_socket(client_socket, server_side=True)
+                print("Request made from {}".format(client_address))
+            except ssl.SSLError as e:
+                print(e)
+            if ssl_socket:
+                ct = WebServer.ClientThread(ssl_socket, client_address)
+                ct.start()
 
     class ClientThread(Thread):
         """Class to handle a client request on a single thread."""
@@ -65,7 +74,7 @@ class WebServer:
             request_data = b""
             while True:
                 # check if there is data to be read
-                ready = select.select([self.client], [], [], self.READ_TIMEOUT)
+                ready = select([self.client], [], [], self.READ_TIMEOUT)
                 if ready[0]:
                     # read new data
                     new_data = self.client.recv(self.BUFFER_SIZE)
