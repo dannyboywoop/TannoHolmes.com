@@ -1,14 +1,11 @@
 """Module used to handle and respond to HTTP requests."""
 from .HTTPResponse import HTTPResponse
 from .HTTPRequest import HTTPRequest
-from .SmartDeviceHandler import SmartDeviceHandler
 from os import getcwd, path
 
 
 class RequestHandler:
     """Class used to create a HTTPResponse for a HTTPRequest object."""
-
-    smart_device_handler = SmartDeviceHandler()
 
     def generate_response(self, request):
         """Generate a HTTPResponse object in response to a HTTPRequest.
