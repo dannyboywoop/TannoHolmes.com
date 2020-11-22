@@ -3,9 +3,9 @@
 Handling of requests is delegated to a "request handler" class.
 """
 from socket import socket, AF_INET, SOCK_STREAM, SOL_SOCKET, SO_REUSEADDR
+from ssl import create_default_context, SSLError, Purpose
 from select import select
 from threading import Thread
-import ssl
 from HTTPTools.RequestHandler import RequestHandler
 from HTTPTools.HTTPResponse import HTTPResponse
 from HTTPTools.HTTPRequest import HTTPRequest
@@ -20,11 +20,11 @@ class WebServer:
     HOST, PORT = '', 8080  # localhost port 8080
     ADDRESS_FAMILY = AF_INET  # ipv4 addresses
     SOCKET_TYPE = SOCK_STREAM  # TCP socket
-    REQUEST_QUEUE_SIZE = 5  # only 1 connection handled at a time
+    REQUEST_QUEUE_SIZE = 10  # will queue up to 10 requests
 
     def __init__(self):
         """Create a TCP socket."""
-        self.context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
+        self.context = create_default_context(Purpose.CLIENT_AUTH)
         self.context.load_cert_chain(certfile="security/public.crt",
                                      keyfile="security/private.key")
 
@@ -38,13 +38,18 @@ class WebServer:
         """Continually accept and respond to client requests."""
         print("Serving on port {} ...".format(self.PORT))
         while True:
+            # accept an incoming connection
             client_socket, client_address = self.listen_socket.accept()
+            print("Request made from {}".format(client_address))
+
+            # attempt to establish a https connection
             try:
                 ssl_socket = self.context.wrap_socket(client_socket,
                                                       server_side=True)
-                print("Request made from {}".format(client_address))
-            except ssl.SSLError as e:
+            except SSLError as e:
                 print(e)
+
+            # if https handshake was successful
             if ssl_socket:
                 ct = WebServer.ClientThread(ssl_socket, client_address)
                 ct.start()
@@ -53,7 +58,7 @@ class WebServer:
         """Class to handle a client request on a single thread."""
 
         BUFFER_SIZE = 4096  # somewhat arbitrary
-        READ_TIMEOUT = 2  # 1 seconds
+        READ_TIMEOUT = 2  # 2 seconds
 
         def __init__(self, client, address):
             """Initialise a thread to handle a client request.
