@@ -1,7 +1,7 @@
 """Module used to handle and respond to HTTP requests."""
 from .HTTPResponse import HTTPResponse
 from .HTTPRequest import HTTPRequest
-from os import getcwd, path
+from os import path
 
 
 class RequestHandler:
@@ -44,7 +44,8 @@ class RequestHandler:
             string: A path to the file, if one was found.
                 Otherwise, returns None.
         """
-        full_path = getcwd() + "/www_root/" + uri.lower()
+        root = path.dirname(path.dirname(__file__))
+        full_path = root + "/www_root/" + uri.lower()
 
         # check if it is a folder containing index.html
         index_path = path.join(full_path, 'index.html')
