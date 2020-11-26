@@ -4,7 +4,7 @@ Handling of requests is delegated to a "request handler" class.
 """
 from socket import socket, AF_INET, SOCK_STREAM, SOL_SOCKET, SO_REUSEADDR
 from ssl import create_default_context, SSLError, Purpose
-from logging import getLogger, handlers, DEBUG
+from logging import getLogger, handlers, Formatter, DEBUG
 from os import path, mkdir
 from queue import Queue
 from select import select
@@ -27,8 +27,7 @@ class WebServer:
 
     def __init__(self):
         """Create a TCP socket."""
-        security_path = root_path + "/security"
-        print(security_path)
+        security_path = path.join(root_path, "security")
         self.context = create_default_context(Purpose.CLIENT_AUTH)
         self.context.load_cert_chain(certfile=security_path+"/public.crt",
                                      keyfile=security_path+"/private.key")
@@ -137,15 +136,17 @@ if __name__ == "__main__":
 
     # setup logging
     logs_path = path.join(root_path, "logs")
-    print(logs_path)
     if not path.exists(logs_path):
         mkdir(logs_path)
     log_queue = Queue(-1)
     queue_handler = handlers.QueueHandler(log_queue)
+    formatter = Formatter(fmt='%(asctime)s %(levelname)-8s %(message)s',
+                          datefmt='%Y-%m-%d %H:%M:%S')
     handler = handlers.TimedRotatingFileHandler(logs_path+"/Server.log",
                                                 when="h",
                                                 interval=4,
                                                 backupCount=5)
+    handler.setFormatter(formatter)
     listener = handlers.QueueListener(log_queue, handler)
     root_logger = getLogger()
     root_logger.addHandler(queue_handler)
