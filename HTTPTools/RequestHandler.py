@@ -206,5 +206,6 @@ class RequestHandler:
         ".woff": "font/woff",
         ".woff2": "font/woff2",
         ".ttf": "font/tff",
-        ".webmanifest": "application/manifest+json"
+        ".webmanifest": "application/manifest+json",
+        ".pdf": "application/pdf"
     }
