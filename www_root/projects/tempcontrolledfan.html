@@ -1,0 +1,178 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <!-- Meta -->
+  <title>Tanno Holmes</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Tanno's Personal Website">
+  <meta name="author" content="Daniel Holmes">
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/resources/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/resources/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/resources/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Fonts -->
+  <link href="/resources/fonts/fonts.css" rel="stylesheet">
+
+  <!-- Style-Sheets -->
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+  <link rel="stylesheet" type="text/css" href="/css/project.css">
+
+  <!-- Scripts -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+
+<body>
+
+  <header>
+    <h1>TANNO HOLMES</h1>
+  </header>
+
+  <nav>
+    <a href="/" >HOME</a>
+    <a href="/projects" >PROJECTS</a>
+    <a href="/pages/about.html" >ABOUT ME</a>
+    <a href="/pages/contact.html" >CONTACT ME</a>
+  </nav>
+
+  <main class="project">
+    <section>
+    <h2>Temperature Controller Fan</h2>
+    
+      <p>In this project I took a standard USB fan and modified it to ramp up/down based on
+          its ambient temperature.
+      </p>
+    </section>
+    <section>
+        <h3>What you'll need</h3>
+        <table class="parts-table">
+            <tr>
+                <td><img src="/resources/images/electronic_parts/arduino_nano.jpg" alt="Arduino Nano R3" class="part"></td>
+                <td>Arduino Nano R3</td>
+                <td><a href="https://store.arduino.cc/arduino-nano"><img src="/resources/images/buy_icon.png" alt="Arduino Nano R3 purchase" class="buy"></a></td>
+            </tr>
+            <tr>
+                <td><img src="/resources/images/electronic_parts/thermistor.jpg" alt="10k NTC Thermistor" class="part"></td>
+                <td>10k NTC Thermistor</td>
+                <td><a href="https://www.amazon.co.uk/gp/product/B079129JZ5/"><img src="/resources/images/buy_icon.png" alt="10k NTC Thermistor purchase" class="buy"></a></td>
+            </tr>
+            <tr>
+                <td><img src="/resources/images/electronic_parts/transistor_npn.jpg" alt="General Purpose NPN Transistor" class="part"></td>
+                <td>General Purpose NPN Transistor</td>
+                <td><a href="https://www.newark.com/on-semiconductor/pn2222abu/bipolar-transistor-npn-40v-to/dp/58K2047?COM=ref_hackster"><img src="/resources/images/buy_icon.png" alt="General Purpose NPN Transistor purchase" class="buy"></a></td>
+            </tr>
+            <tr>
+                <td><img src="/resources/images/electronic_parts/1k_resistor.jpg" alt="1k Resistor" class="part"></td>
+                <td>1k Resistor</td>
+                <td><a href="https://www.newark.com/multicomp/mccfr0w4j0102a50/carbon-film-resistor-1kohm-250mw/dp/58K5001?COM=ref_hackster"><img src="/resources/images/buy_icon.png" alt="1k Resistor purchase" class="buy"></a></td>
+            </tr>
+            <tr>
+                <td><img src="/resources/images/electronic_parts/10k_resistor.jpg" alt="10k Resistor" class="part"></td>
+                <td>10k Resistor</td>
+                <td><a href="https://www.newark.com/multicomp/mccfr0w4j0103a50/carbon-film-resistor-10kohm-250mw/dp/58K5002?COM=ref_hackster"><img src="/resources/images/buy_icon.png" alt="10k Resistor purchase" class="buy"></a></td>
+            </tr>
+            <tr>
+                <td><img src="/resources/images/electronic_parts/breadboard.jpg" alt="Breadboard" class="part"></td>
+                <td>Breadboard</td>
+                <td><a href="https://www.newark.com/bud-industries/bb-32621/breadboard-solderless-removable/dp/88W3961"><img src="/resources/images/buy_icon.png" alt="Breadboard purchase" class="buy"></a></td>
+            </tr>
+            <tr>
+                <td><img src="/resources/images/electronic_parts/jumper_wires.jpg" alt="Jumper wires" class="part"></td>
+                <td>Jumper wires</td>
+                <td><a href="https://www.newark.com/adafruit/759/wire-gauge-28awg/dp/88W2571?COM=ref_hackster"><img src="/resources/images/buy_icon.png" alt="Jumper wires purchase" class="buy"></a></td>
+            </tr>
+        </table>
+    </section>
+    <section>
+        <h3>The setup</h3>
+	<p>To start, I prototyped the project using a breadboard. A diagram of this is shown below.</p>
+	<figure>
+          <img src="/resources/images/tempcontrolledfan_schematic.png" alt="Prototype Diagramc" style="width:100%">
+          <figcaption>Fig.1 - Prototype diagram.</figcaption>
+        </figure>
+        <p>The next step was to write some simple software to measure the temperature and set the speed of the fan accordingly.
+        Before I show you the code, it would be best to go over how exactly it all works</p> 
+    </section>
+    <section>
+        <h3>How the temperature is measured</h3>
+        <figure>
+          <img src="/resources/images/tempcontrolledfan_thermistor.svg" alt="Thermistor Diagram" style="width:100%">
+          <figcaption>Fig.2 - Temperature sensing circuit.</figcaption>
+        </figure>
+        
+      <p>
+      Noting that \(V_{out} = V_{k}\), and that the current will be constant throughout the circuit,
+        the proportionality of voltage and resistance stated in <a href="https://en.wikipedia.org/wiki/Ohm%27s_law">Ohms's Law</a> leads to,
+        \[
+        {V_{out} \over V_{ref}} = {R_k \over R_k + R_T}.
+        \]
+        This can be rearranged into an equation for \(R_T\) as follows,
+        \[
+        \begin{align}
+        R_k + R_T &= {{R_kV_{ref}} \over {V_{out}}}\\
+        R_T &= {{R_kV_{ref}} \over {V_{out}}} - R_k \tag{1}\label{eq:resistance_general}
+        \end{align}
+        \]
+      </p>
+        <p>
+          The voltage meaured by the Arduino is converted into a 10 bit ADC value, with 0 representing 0V
+          and 1023 representing the reference voltage of 5V. This can be described by,
+          \[
+          ADC = {{V_{out}}\over{V_{ref}}} \times 1023 \tag{2}.
+          \]
+        Plugging this into equation \eqref{eq:resistance_general} yields,
+        \[
+        R_T = \left({1023 \over ADC} - 1\right)\cdot R_k \tag{3}\label{eq:resistance}.
+        \]
+
+        </p>
+      <p>
+        Now that we have an equation for the resistance of the thermistor, we can attempt to convert this into a temperature.
+        In an ideal world this would be done by taking measurements at known temperatures, attempting to fit the results to the <a href="https://en.wikipedia.org/wiki/Steinhart%E2%80%93Hart_equation">Steinhart–Hart equation</a>,
+        \[
+        {1 \over T} = A + B \ln{R} + C\left(\ln{R}\right)^3,
+        \]
+        where \(T\) is the temperature in kelvin, R is the resistance in ohms and \(A,B\) and \(C\) are model parameters.
+      </p>
+        <p>
+          As I don't have the equipment to accurately set or measure temperature, I opted to use a simplified equation with only one parameter.
+          The equation in question is derived from the Steinhart-Hart equation by setting \(A = \frac{1}{T_0}-\frac{1}{\beta}\ln{R_0},
+           B=\frac{1}{\beta}\) and \(C=0\). This leads to,
+          \[
+          \frac{1}{T}=\frac{1}{T_0}+\frac{1}{\beta}\ln{\frac{R}{R_0}} \tag{4}\label{eq:temp},
+          \]
+          where \(T_0\) is a reference temperature, usually 25°C (298.15 kelvin), \(R_0\) is the resistance of the thermistor
+          at the reference temperature and \(\beta\) is the sole model parameter.
+        </p>
+        <p>
+          Equation \eqref{eq:temp} can be used for NTC thermistors, like the one used in this project.
+          Most <a href="https://en.wikipedia.org/wiki/Thermistor#NTC">NTC thermistors</a> will quote values for \(\beta, T_0\) and \(R_0\) in their accompanying datasheets.
+        </p>
+        <p>We can rearrange equation \eqref{eq:temp} into an equation for \(T\) as follows,
+          \[
+          \begin{align}
+          \frac{1}{T} &=\ln{\left(\exp{\frac{1}{T_0}}\right)} + \frac{1}{\beta}\ln{\frac{R}{R_0}}\\
+          &=\frac{1}{\beta}\ln{\left(\exp{\frac{\beta}{T_0}}\right)} + \frac{1}{\beta}\ln{\frac{R}{R_0}}\\
+          &=\frac{1}{\beta}\ln{\left(\frac{R}{R_0\exp{(\frac{-\beta}{T_0})}}\right)}\\
+          T &= \frac{\beta}{\ln{\left(\frac{R}{R_\infty}\right)}} \tag{5}\label{eq:temp_resistance},
+          \end{align}
+          \]
+          where we define \(R_\infty=R_0\exp{(\frac{-\beta}{T_0})}\).
+        </p>
+      </section>
+      <section>
+        <h3>The code</h3>
+      </section>
+      <section>
+        <h3>The final(ish) product</h3>
+      </section>
+  </main>
+
+</body>
+</html>

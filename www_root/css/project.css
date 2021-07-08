@@ -1,0 +1,52 @@
+main.project{
+  text-align: justify;
+}
+
+table.parts-table{
+  border: 1px solid rgb(100, 100, 100);
+  border-collapse: collapse;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.parts-table tr, table.parts-table td{
+  text-align: left;
+  padding: 8px;
+}
+
+table.parts-table img.part{
+  display: block;
+  height: 100px;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.parts-table img.buy{
+  display: block;
+  height: 30px;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.parts-table tr td:first-child{
+  width: 35%;
+}
+
+table.parts-table tr:nth-child(even) {
+  background-color: rgb(200, 200, 200);
+}
+
+table.parts-table a{
+  text-decoration: none;
+}
+
+table.parts-table a:visited{
+  color: rgb(0, 0, 0);
+}
+
+table.parts-table a:hover{
+  color: rgb(100, 100, 100);
+}
