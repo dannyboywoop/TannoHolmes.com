@@ -1,2 +1,2 @@
 # TannoHolmes.com
-Python web server for TannoHolmes.com
+My personal site.
