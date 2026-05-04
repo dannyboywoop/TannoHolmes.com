@@ -1,0 +1,269 @@
+<svg width="267.382" height="175.088" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="602" width="802" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g id="svg_1">
+   <g id="svg_2">
+    <g id="schematic">
+     <rect id="svg_3" stroke-width="0.9" class="interior rect" x="140.88363" stroke="#000000" fill="#FFFFFF" y="30.3465" width="56.7" height="128.7" stroke-linecap="round"/>
+     <line stroke-width="0" class="pin" x1="197.68353" fill="none" id="connector45pin" y2="44.2965" x2="212.08353" y1="44.2965" stroke-linecap="round"/>
+     <g stroke-width="0" class="terminal" fill="none" id="connector45terminal"/>
+     <line stroke-width="0.7" class="pin" x1="197.68353" stroke="#787878" fill="none" id="connector57pin" y2="44.2965" x2="212.08353" y1="44.2965" stroke-linecap="round"/>
+     <text id="svg_4" font-size="3.49999" stroke-width="0" class="text" x="196.28353" y="44.9964" fill="#8c8c8c" font-family="'Droid Sans'" text-anchor="end">D13/SCK</text>
+     <rect stroke-width="0" class="terminal" x="212.08353" fill="none" y="43.9464" id="connector57terminal" width="0.7" height="0.7"/>
+     <line stroke-width="0" class="pin" x1="197.68353" fill="none" id="connector30pin" y2="51.4965" x2="212.08353" y1="51.4965" stroke-linecap="round"/>
+     <g stroke-width="0" class="terminal" fill="none" id="connector30terminal"/>
+     <line stroke-width="0.7" class="pin" x1="197.68353" stroke="#787878" fill="none" id="connector55pin" y2="51.4965" x2="212.08353" y1="51.4965" stroke-linecap="round"/>
+     <text id="svg_5" font-size="3.49999" stroke-width="0" class="text" x="196.28353" y="52.1964" fill="#8c8c8c" font-family="'Droid Sans'" text-anchor="end">D12/MISO</text>
+     <rect stroke-width="0" class="terminal" x="212.08353" fill="none" y="51.1464" id="connector55terminal" width="0.7" height="0.7"/>
+     <line stroke-width="0" class="pin" x1="197.68353" fill="none" id="connector29pin" y2="58.6965" x2="212.08353" y1="58.6965" stroke-linecap="round"/>
+     <g stroke-width="0" class="terminal" fill="none" id="connector29terminal"/>
+     <line stroke-width="0.7" class="pin" x1="197.68353" stroke="#787878" fill="none" id="connector58pin" y2="58.6965" x2="212.08353" y1="58.6965" stroke-linecap="round"/>
+     <text id="svg_6" font-size="3.49999" stroke-width="0" class="text" x="196.28353" y="59.3964" fill="#8c8c8c" font-family="'Droid Sans'" text-anchor="end">D11/MOSI</text>
+     <rect stroke-width="0" class="terminal" x="212.08353" fill="none" y="58.3464" id="connector58terminal" width="0.7" height="0.7"/>
+     <line stroke-width="0.7" class="pin" x1="197.68353" stroke="#787878" fill="none" id="connector28pin" y2="65.8965" x2="212.08353" y1="65.8965" stroke-linecap="round"/>
+     <text id="svg_7" font-size="3.49999" stroke-width="0" class="text" x="196.28353" y="66.5964" fill="#8c8c8c" font-family="'Droid Sans'" text-anchor="end">D10</text>
+     <g stroke-width="0" class="terminal" fill="none" id="connector28terminal"/>
+     <line stroke-width="0.7" class="pin" x1="197.68353" stroke="#787878" fill="none" id="connector27pin" y2="73.0965" x2="212.08353" y1="73.0965" stroke-linecap="round"/>
+     <text id="svg_8" font-size="3.49999" stroke-width="0" class="text" x="196.28353" y="73.7964" fill="#8c8c8c" font-family="'Droid Sans'" text-anchor="end">D9</text>
+     <g stroke-width="0" class="terminal" fill="none" id="connector27terminal"/>
+     <line stroke-width="0.7" class="pin" x1="197.68353" stroke="#787878" fill="none" id="connector26pin" y2="80.2965" x2="212.08353" y1="80.2965" stroke-linecap="round"/>
+     <text id="svg_9" font-size="3.49999" stroke-width="0" class="text" x="196.28353" y="80.9964" fill="#8c8c8c" font-family="'Droid Sans'" text-anchor="end">D8</text>
+     <g stroke-width="0" class="terminal" fill="none" id="connector26terminal"/>
+     <line stroke-width="0.7" class="pin" x1="197.68353" stroke="#787878" fill="none" id="connector25pin" y2="87.4965" x2="212.08353" y1="87.4965" stroke-linecap="round"/>
+     <text id="svg_10" font-size="3.49999" stroke-width="0" class="text" x="196.28353" y="88.1964" fill="#8c8c8c" font-family="'Droid Sans'" text-anchor="end">D7</text>
+     <g stroke-width="0" class="terminal" fill="none" id="connector25terminal"/>
+     <line stroke-width="0.7" class="pin" x1="197.68353" stroke="#787878" fill="none" id="connector24pin" y2="94.6965" x2="212.08353" y1="94.6965" stroke-linecap="round"/>
+     <text id="svg_11" font-size="3.49999" stroke-width="0" class="text" x="196.28353" y="95.3964" fill="#8c8c8c" font-family="'Droid Sans'" text-anchor="end">D6</text>
+     <g stroke-width="0" class="terminal" fill="none" id="connector24terminal"/>
+     <line stroke-width="0.7" class="pin" x1="197.68353" stroke="#787878" fill="none" id="connector23pin" y2="101.8965" x2="212.08353" y1="101.8965" stroke-linecap="round"/>
+     <text id="svg_12" font-size="3.49999" stroke-width="0" class="text" x="196.28353" y="102.5964" fill="#8c8c8c" font-family="'Droid Sans'" text-anchor="end">D5</text>
+     <g stroke-width="0" class="terminal" fill="none" id="connector23terminal"/>
+     <line stroke-width="0.7" class="pin" x1="197.68353" stroke="#787878" fill="none" id="connector22pin" y2="109.0965" x2="212.08353" y1="109.0965" stroke-linecap="round"/>
+     <text id="svg_13" font-size="3.49999" stroke-width="0" class="text" x="196.28353" y="109.7964" fill="#8c8c8c" font-family="'Droid Sans'" text-anchor="end">D4</text>
+     <g stroke-width="0" class="terminal" fill="none" id="connector22terminal"/>
+     <line stroke-width="0.7" class="pin" x1="197.68353" stroke="#787878" fill="none" id="connector21pin" y2="116.2965" x2="212.08353" y1="116.2965" stroke-linecap="round"/>
+     <text id="svg_14" font-size="3.49999" stroke-width="0" class="text" x="196.28353" y="116.9965" fill="#8c8c8c" font-family="'Droid Sans'" text-anchor="end">D3</text>
+     <g stroke-width="0" class="terminal" fill="none" id="connector21terminal"/>
+     <line stroke-width="0.7" class="pin" x1="197.68353" stroke="#787878" fill="none" id="connector20pin" y2="123.4965" x2="212.08353" y1="123.4965" stroke-linecap="round"/>
+     <text id="svg_15" font-size="3.49999" stroke-width="0" class="text" x="196.28353" y="124.1965" fill="#8c8c8c" font-family="'Droid Sans'" text-anchor="end">D2</text>
+     <g stroke-width="0" class="terminal" fill="none" id="connector20terminal"/>
+     <line stroke-width="0.7" class="pin" x1="197.68353" stroke="#787878" fill="none" id="connector16pin" y2="137.8965" x2="212.08353" y1="137.8965" stroke-linecap="round"/>
+     <text id="svg_16" font-size="3.49999" stroke-width="0" class="text" x="196.28353" y="138.5965" fill="#8c8c8c" font-family="'Droid Sans'" text-anchor="end">D1/TX</text>
+     <g stroke-width="0" class="terminal" fill="none" id="connector16terminal"/>
+     <line stroke-width="0.7" class="pin" x1="197.68353" stroke="#787878" fill="none" id="connector17pin" y2="145.0965" x2="212.08353" y1="145.0965" stroke-linecap="round"/>
+     <text id="svg_17" font-size="3.49999" stroke-width="0" class="text" x="196.28353" y="145.7965" fill="#8c8c8c" font-family="'Droid Sans'" text-anchor="end">D0/RX</text>
+     <g stroke-width="0" class="terminal" fill="none" id="connector17terminal"/>
+     <line stroke-width="0" class="pin" x1="126.38363" fill="none" id="connector33pin" y2="44.2965" x2="140.78363" y1="44.2965" stroke-linecap="round"/>
+     <g stroke-width="0" class="terminal" fill="none" id="connector33terminal"/>
+     <line stroke-width="0" class="pin" x1="126.38363" fill="none" id="connector18pin" y2="44.2965" x2="140.78363" y1="44.2965" stroke-linecap="round"/>
+     <g stroke-width="0" class="terminal" fill="none" id="connector18terminal"/>
+     <line stroke-width="0.7" class="pin" x1="126.38363" stroke="#787878" fill="none" id="connector59pin" y2="44.2965" x2="140.78363" y1="44.2965" stroke-linecap="round"/>
+     <text id="svg_18" font-size="3.49999" stroke-width="0" class="text" x="142.18363" y="44.9964" fill="#8c8c8c" font-family="'Droid Sans'" text-anchor="start">RESET</text>
+     <rect stroke-width="0" class="terminal" x="125.68363" fill="none" y="43.9464" id="connector59terminal" width="0.7" height="0.7"/>
+     <line stroke-width="0.7" class="pin" x1="126.38363" stroke="#787878" fill="none" id="connector43pin" y2="51.4965" x2="140.78363" y1="51.4965" stroke-linecap="round"/>
+     <text id="svg_19" font-size="3.49999" stroke-width="0" class="text" x="142.18363" y="52.1964" fill="#8c8c8c" font-family="'Droid Sans'" text-anchor="start">AREF</text>
+     <g stroke-width="0" class="terminal" fill="none" id="connector43terminal"/>
+     <line stroke-width="0.7" class="pin" x1="126.38363" stroke="#787878" fill="none" id="connector42pin" y2="65.8965" x2="140.78363" y1="65.8965" stroke-linecap="round"/>
+     <text id="svg_20" font-size="3.49999" stroke-width="0" class="text" x="142.18363" y="66.5964" fill="#8c8c8c" font-family="'Droid Sans'" text-anchor="start">A0</text>
+     <g stroke-width="0" class="terminal" fill="none" id="connector42terminal"/>
+     <line stroke-width="0.7" class="pin" x1="126.38363" stroke="#787878" fill="none" id="connector41pin" y2="73.0965" x2="140.78363" y1="73.0965" stroke-linecap="round"/>
+     <text id="svg_21" font-size="3.49999" stroke-width="0" class="text" x="142.18363" y="73.7964" fill="#8c8c8c" font-family="'Droid Sans'" text-anchor="start">A1</text>
+     <g stroke-width="0" class="terminal" fill="none" id="connector41terminal"/>
+     <line stroke-width="0.7" class="pin" x1="126.38363" stroke="#787878" fill="none" id="connector40pin" y2="80.2965" x2="140.78363" y1="80.2965" stroke-linecap="round"/>
+     <text id="svg_22" font-size="3.49999" stroke-width="0" class="text" x="142.18363" y="80.9964" fill="#8c8c8c" font-family="'Droid Sans'" text-anchor="start">A2</text>
+     <g stroke-width="0" class="terminal" fill="none" id="connector40terminal"/>
+     <line stroke-width="0.7" class="pin" x1="126.38363" stroke="#787878" fill="none" id="connector39pin" y2="87.4965" x2="140.78363" y1="87.4965" stroke-linecap="round"/>
+     <text id="svg_23" font-size="3.49999" stroke-width="0" class="text" x="142.18363" y="88.1964" fill="#8c8c8c" font-family="'Droid Sans'" text-anchor="start">A3</text>
+     <g stroke-width="0" class="terminal" fill="none" id="connector39terminal"/>
+     <line stroke-width="0.7" class="pin" x1="126.38363" stroke="#787878" fill="none" id="connector38pin" y2="94.6965" x2="140.78363" y1="94.6965" stroke-linecap="round"/>
+     <text id="svg_24" font-size="3.49999" stroke-width="0" class="text" x="142.18363" y="95.3964" fill="#8c8c8c" font-family="'Droid Sans'" text-anchor="start">A4</text>
+     <g stroke-width="0" class="terminal" fill="none" id="connector38terminal"/>
+     <line stroke-width="0.7" class="pin" x1="126.38363" stroke="#787878" fill="none" id="connector37pin" y2="101.8965" x2="140.78363" y1="101.8965" stroke-linecap="round"/>
+     <text id="svg_25" font-size="3.49999" stroke-width="0" class="text" x="142.18363" y="102.5964" fill="#8c8c8c" font-family="'Droid Sans'" text-anchor="start">A5</text>
+     <g stroke-width="0" class="terminal" fill="none" id="connector37terminal"/>
+     <line stroke-width="0.7" class="pin" x1="126.38363" stroke="#787878" fill="none" id="connector36pin" y2="109.0965" x2="140.78363" y1="109.0965" stroke-linecap="round"/>
+     <text id="svg_26" font-size="3.49999" stroke-width="0" class="text" x="142.18363" y="109.7964" fill="#8c8c8c" font-family="'Droid Sans'" text-anchor="start">A6</text>
+     <g stroke-width="0" class="terminal" fill="none" id="connector36terminal"/>
+     <line stroke-width="0.7" class="pin" x1="126.38363" stroke="#787878" fill="none" id="connector35pin" y2="116.2965" x2="140.78363" y1="116.2965" stroke-linecap="round"/>
+     <text id="svg_27" font-size="3.49999" stroke-width="0" class="text" x="142.18363" y="116.9965" fill="#8c8c8c" font-family="'Droid Sans'" text-anchor="start">A7</text>
+     <g stroke-width="0" class="terminal" fill="none" id="connector35terminal"/>
+     <line stroke-width="0" class="pin" x1="169.23363" fill="none" id="connector19pin" y2="173.5465" x2="169.23363" y1="159.1465" stroke-linecap="round"/>
+     <g stroke-width="0" class="terminal" fill="none" id="connector19terminal"/>
+     <line stroke-width="0" class="pin" x1="169.23363" fill="none" id="connector32pin" y2="173.5465" x2="169.23363" y1="159.1465" stroke-linecap="round"/>
+     <g stroke-width="0" class="terminal" fill="none" id="connector32terminal"/>
+     <line stroke-width="0.7" class="pin" x1="169.23363" stroke="#787878" fill="none" id="connector60pin" y2="173.5465" x2="169.23363" y1="159.1465" stroke-linecap="round"/>
+     <g id="svg_28" transform="matrix(1,0,0,1,43.8999,142.25) ">
+      <g id="svg_29">
+       <g id="svg_30" transform="rotate(270 126.03363037109375,15.496500015258786) ">
+        <g id="svg_31">
+         <text id="svg_32" font-size="3.49999" stroke-width="0" class="text" x="126.03363" y="15.4965" fill="#8c8c8c" font-family="'Droid Sans'" text-anchor="start">GND</text>
+        </g>
+       </g>
+      </g>
+     </g>
+     <rect stroke-width="0" class="terminal" x="168.88353" fill="none" y="173.5465" id="connector60terminal" width="0.7" height="0.7"/>
+     <line stroke-width="0.7" class="pin" x1="154.83363" stroke="#787878" fill="none" id="connector31pin" y2="30.2465" x2="154.83363" y1="15.8465" stroke-linecap="round"/>
+     <g id="svg_33" transform="matrix(1,0,0,1,29.4999,16.15) ">
+      <g id="svg_34">
+       <g id="svg_35" transform="rotate(270 126.03363037109375,15.496500015258786) ">
+        <g id="svg_36">
+         <text id="svg_37" font-size="3.49999" stroke-width="0" class="text" x="126.03363" y="15.4965" fill="#8c8c8c" font-family="'Droid Sans'" text-anchor="end">VIN</text>
+        </g>
+       </g>
+      </g>
+     </g>
+     <g stroke-width="0" class="terminal" fill="none" id="connector31terminal"/>
+     <line stroke-width="0" class="pin" x1="169.23363" fill="none" id="connector34pin" y2="30.2465" x2="169.23363" y1="15.8465" stroke-linecap="round"/>
+     <g stroke-width="0" class="terminal" fill="none" id="connector34terminal"/>
+     <line stroke-width="0.7" class="pin" x1="169.23363" stroke="#787878" fill="none" id="connector56pin" y2="30.2465" x2="169.23363" y1="15.8465" stroke-linecap="round"/>
+     <g id="svg_38" transform="matrix(1,0,0,1,43.8999,16.15) ">
+      <g id="svg_39">
+       <g id="svg_40" transform="rotate(270 126.03363037109375,15.496500015258786) ">
+        <g id="svg_41">
+         <text id="svg_42" font-size="3.49999" stroke-width="0" class="text" x="126.03363" y="15.4965" fill="#8c8c8c" font-family="'Droid Sans'" text-anchor="end">5V</text>
+        </g>
+       </g>
+      </g>
+     </g>
+     <rect stroke-width="0" class="terminal" x="168.88353" fill="none" y="15.1465" id="connector56terminal" width="0.7" height="0.7"/>
+     <line stroke-width="0.7" class="pin" x1="183.63363" stroke="#787878" fill="none" id="connector44pin" y2="30.2465" x2="183.63363" y1="15.8465" stroke-linecap="round"/>
+     <g id="svg_43" transform="matrix(1,0,0,1,58.2999,16.15) ">
+      <g id="svg_44">
+       <g id="svg_45" transform="rotate(270 126.03363037109375,15.496500015258786) ">
+        <g id="svg_46">
+         <text id="svg_47" font-size="3.49999" stroke-width="0" class="text" x="126.03363" y="15.4965" fill="#8c8c8c" font-family="'Droid Sans'" text-anchor="end">3V3</text>
+        </g>
+       </g>
+      </g>
+     </g>
+     <g stroke-width="0" class="terminal" fill="none" id="connector44terminal"/>
+     <text font-size="4.25001" stroke-width="0" class="text" x="169.68353" y="88.3463" fill="#000000" font-family="'Droid Sans'" id="label" text-anchor="middle">Arduino</text>
+     <text font-size="4.25001" stroke-width="0" class="text" x="169.68353" y="92.8798" fill="#000000" font-family="'Droid Sans'" id="label" text-anchor="middle">Nano</text>
+     <text font-size="4.25001" stroke-width="0" class="text" x="169.68353" y="97.4132" fill="#000000" font-family="'Droid Sans'" id="label" text-anchor="middle">(Rev3.0)</text>
+    </g>
+   </g>
+  </g>
+  <g id="svg_114">
+   <g id="svg_115">
+    <g id="svg_116" transform="matrix(-1,0,0,1,0,0) ">
+     <g id="schematic">
+      <polyline id="svg_117" points="-68.36623001098633,51.15429902076721 -68.36623001098633,49.712297677993774 -71.24722671508789,47.553301095962524 -64.76723098754883,43.95229935646057 -71.24722671508789,40.35229706764221 -64.76723098754883,36.75329804420471 -71.24722671508789,33.15329957008362 -64.76723098754883,29.55329918861389 -71.24722671508789,25.953300714492798 -68.36623001098633,23.79330086708069 -68.36623001098633,22.35330033302307 " stroke-width="0.7" stroke="#000000" fill="none" stroke-linecap="round"/>
+      <line stroke-width="0.7" x1="-68.36623" stroke="#787878" fill="none" y2="51.1543" x2="-68.36623" y1="58.3523" id="connector0pin_2_" stroke-linecap="round"/>
+      <path fill="none" id="connector0terminal_2_" d="m-68.36623,58.3523l0,0l0,0z"/>
+      <g id="svg_118" transform="matrix(1,0,0,1,0.9906,14.0462) ">
+       <g id="svg_119">
+        <g id="svg_120" transform="rotate(270 -78.74122619628906,15.153300285339352) ">
+         <g id="svg_121">
+          <g id="svg_122" transform="matrix(1,0,0,1,-26.394,7.8698) ">
+           <text id="svg_123" x="-78.74123" y="15.1533" font-size="2" fill="#787878" font-family="'Droid Sans'">1</text>
+          </g>
+         </g>
+        </g>
+       </g>
+      </g>
+      <line stroke-width="0.7" x1="-68.36623" stroke="#787878" fill="none" y2="22.3533" x2="-68.36623" y1="15.1533" id="connector1pin_2_" stroke-linecap="round"/>
+      <path fill="none" id="connector1terminal_2_" d="m-68.36623,15.1533l0,0l0,0z"/>
+      <g id="svg_124" transform="matrix(1,0,0,1,0.9906,1.3462) ">
+       <g id="svg_125">
+        <g id="svg_126" transform="rotate(270 -78.74122619628906,15.153300285339352) ">
+         <g id="svg_127">
+          <g id="svg_128" transform="matrix(1,0,0,1,-3.094,7.8698) ">
+           <text id="svg_129" x="-78.74123" y="15.1533" font-size="2" fill="#787878" font-family="'Droid Sans'">2</text>
+          </g>
+         </g>
+        </g>
+       </g>
+      </g>
+     </g>
+    </g>
+   </g>
+  </g>
+  <g id="svg_130">
+   <g id="svg_131">
+    <g id="svg_132" transform="matrix(0,1,-1,0,0,0) ">
+     <g id="schematic">
+      <line id="svg_133" stroke-width="0.432" class="other" x1="123.49602" stroke="#000000" y2="-71.31403" x2="124.57603" y1="-68.43403" stroke-linecap="round"/>
+      <line id="svg_134" stroke-width="0.432" class="other" x1="124.57603" stroke="#000000" y2="-65.55403" x2="126.376" y1="-71.31403" stroke-linecap="round"/>
+      <line id="svg_135" stroke-width="0.432" class="other" x1="126.376" stroke="#000000" y2="-71.31403" x2="128.176" y1="-65.55403" stroke-linecap="round"/>
+      <line id="svg_136" stroke-width="0.432" class="other" x1="128.176" stroke="#000000" y2="-65.55403" x2="129.976" y1="-71.31403" stroke-linecap="round"/>
+      <line id="svg_137" stroke-width="0.432" class="other" x1="129.976" stroke="#000000" y2="-71.31403" x2="131.7761" y1="-65.55403" stroke-linecap="round"/>
+      <line id="svg_138" stroke-width="0.432" class="other" x1="131.7761" stroke="#000000" y2="-65.55403" x2="133.5761" y1="-71.31403" stroke-linecap="round"/>
+      <line id="svg_139" stroke-width="0.432" class="other" x1="133.5761" stroke="#000000" y2="-71.31403" x2="135.3761" y1="-65.55403" stroke-linecap="round"/>
+      <line id="svg_140" stroke-width="0.432" class="other" x1="135.3761" stroke="#000000" y2="-65.55403" x2="137.1761" y1="-71.31403" stroke-linecap="round"/>
+      <line id="svg_141" stroke-width="0.432" class="other" x1="137.1761" stroke="#000000" y2="-68.43403" x2="137.8961" y1="-65.55403" stroke-linecap="round"/>
+      <line stroke-width="0.7" class="pin" x1="145.0962" stroke="#787878" y2="-68.43403" x2="137.8961" y1="-68.43403" id="connector1pin" stroke-linecap="round"/>
+      <g stroke-width="0" class="terminal" fill="none" id="connector1terminal"/>
+      <text id="svg_142" font-size="2.50001" stroke-width="0" class="text" x="141.4961" y="-69.48403" fill="#8c8c8c" font-family="'Droid Sans'" text-anchor="middle">2</text>
+      <line stroke-width="0.7" class="pin" x1="116.296" stroke="#787878" y2="-68.43403" x2="123.49602" y1="-68.43403" id="connector0pin" stroke-linecap="round"/>
+      <g stroke-width="0" class="terminal" fill="none" id="connector0terminal"/>
+      <text id="svg_143" font-size="2.50001" stroke-width="0" class="text" x="119.89601" y="-69.48403" fill="#8c8c8c" font-family="'Droid Sans'" text-anchor="middle">1</text>
+     </g>
+    </g>
+   </g>
+  </g>
+  <g id="svg_152">
+   <line id="svg_153" stroke-width="0.7" y2="173.896" x2="169.23363" y1="173.878" x1="68.46483" stroke="#404040" stroke-linecap="round"/>
+  </g>
+  <g id="svg_155">
+   <line id="svg_156" stroke-width="0.7" y2="173.878" x2="68.46483" y1="145.101" x1="68.46483" stroke="#404040" stroke-linecap="round"/>
+  </g>
+  <g id="svg_157">
+   <line id="svg_158" stroke-width="0.7" y2="145.101" x2="68.46483" y1="145.096" x1="68.43363" stroke="#404040" stroke-linecap="round"/>
+  </g>
+  <g id="svg_159">
+   <line id="svg_160" stroke-width="0.7" y2="116.296" x2="68.43363" y1="58.0101" x1="68.42963" stroke="#404040" stroke-linecap="round"/>
+  </g>
+  <g id="svg_162">
+   <line id="svg_163" stroke-width="0.7" y2="65.8964" x2="126.03363" y1="65.8829" x1="68.46483" stroke="#404040" stroke-linecap="round"/>
+  </g>
+  <g id="svg_164">
+   <line id="svg_165" stroke-width="0.7" y2="65.8825" x2="68.46483" y1="58.0101" x1="68.42963" stroke="#404040" stroke-linecap="round"/>
+  </g>
+  <g id="svg_171">
+   <line id="svg_172" stroke-width="0.7" y2="1.05271" x2="169.18363" y1="15.4965" x1="169.23363" stroke="#404040" stroke-linecap="round"/>
+  </g>
+  <g id="svg_174">
+   <line id="svg_175" stroke-width="0.7" y2="15.4962" x2="68.43363" y1="1.05247" x1="68.46483" stroke="#404040" stroke-linecap="round"/>
+  </g>
+  <g id="svg_176">
+   <line id="svg_177" stroke-width="0.7" y2="1.05247" x2="68.46483" y1="1.05247" x1="169.18363" stroke="#404040" stroke-linecap="round"/>
+  </g>
+  <g id="svg_178">
+   <line id="svg_179" stroke-width="0.7" y2="1.05271" x2="169.18363" y1="15.4965" x1="169.23363" stroke="#404040" stroke-linecap="round"/>
+  </g>
+  <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="5" id="svg_199" y="132.70555" x="9.87743" stroke-width="0" stroke="#000" fill="#000000">Known Resistor (Rₖ, Vₖ)</text>
+  <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="5" id="svg_200" y="36.77334" x="20.21642" stroke-width="0" stroke="#000" fill="#000000">Thermistor (Rₜ, Vₜ)</text>
+  <line stroke="#404040" stroke-dasharray="2,2" stroke-linecap="round" stroke-linejoin="null" id="svg_206" y2="78.97673" x2="255.13168" y1="0.84114" x1="255.47066" fill-opacity="null" stroke-opacity="null" stroke-width="0.7" fill="none"/>
+  <line stroke-dasharray="2,2" stroke-linecap="round" stroke-linejoin="null" id="svg_207" y2="98.29877" x2="255.47066" y1="173.55301" x1="255.13167" fill-opacity="null" stroke-opacity="null" stroke-width="0.7" stroke="#404040" fill="none"/>
+  <ellipse stroke="#404040" ry="9.23729" rx="9.83051" id="svg_208" cy="88.89199" cx="255.13167" fill-opacity="null" stroke-opacity="null" stroke-width="0.7" fill="none"/>
+  <ellipse stroke="#404040" ry="8.8983" rx="9.23729" id="svg_210" cy="130.24792" cx="89.79268" fill-opacity="null" stroke-opacity="null" stroke-width="0.7" fill="none"/>
+  <ellipse stroke="#404040" ry="8.8983" rx="9.23729" id="svg_211" cy="36.85809" cx="93.35201" fill-opacity="null" stroke-opacity="null" stroke-width="0.7" fill="none"/>
+  <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" id="svg_212" y="93.7225" x="246.82659" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#404040" fill="#000000">V</text>
+  <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" id="svg_213" y="42.02758" x="86.82658" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#404040" fill="#000000">V</text>
+  <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" id="svg_214" y="135.07843" x="83.77574" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#404040" fill="#000000">V</text>
+  <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="8" id="svg_216" y="63.38351" x="124.6232" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#404040" fill="#000000">V</text>
+  <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="4" id="svg_217" y="63.55301" x="129.36896" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#404040" fill="#000000">out</text>
+  <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="7" id="svg_218" y="41.85809" x="95.13167" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#404040" fill="#000000">T</text>
+  <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="7" id="svg_219" y="134.90894" x="91.91133" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#404040" fill="#000000">k</text>
+  <text stroke="#404040" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="7" id="svg_220" y="93.7225" x="254.11472" fill-opacity="null" stroke-opacity="null" stroke-width="0" fill="#000000">ref</text>
+  <line stroke-linecap="round" stroke-linejoin="null" id="svg_221" y2="1.34961" x2="255.64015" y1="1.18012" x1="169.19947" fill-opacity="null" stroke-opacity="null" stroke-dasharray="2,2" stroke-width="0.7" stroke="#404040" fill="none"/>
+  <line stroke-linecap="round" stroke-linejoin="null" id="svg_222" y2="173.55301" x2="255.13167" y1="173.89199" x1="169.19947" fill-opacity="null" stroke-opacity="null" stroke-dasharray="2,2" stroke-width="0.7" stroke="#404040" fill="none"/>
+  <line stroke-linecap="round" stroke-linejoin="null" id="svg_223" y2="148.29877" x2="90.38591" y1="148.12928" x1="68.69099" fill-opacity="null" stroke-opacity="null" stroke-dasharray="2,2" stroke-width="0.7" stroke="#404040" fill="none"/>
+  <line stroke-linecap="round" stroke-linejoin="null" id="svg_224" y2="147.95979" x2="90.5554" y1="139.14623" x1="90.5554" fill-opacity="null" stroke-opacity="null" stroke-dasharray="2,2" stroke-width="0.7" stroke="#404040" fill="none"/>
+  <line stroke-linecap="round" stroke-linejoin="null" id="svg_225" y2="113.04453" x2="90.21642" y1="121.18012" x1="90.21642" fill-opacity="null" stroke-opacity="null" stroke-dasharray="2,2" stroke-width="0.7" stroke="#404040" fill="none"/>
+  <line stroke-linecap="round" stroke-linejoin="null" id="svg_226" y2="112.36657" x2="90.38591" y1="112.19707" x1="68.5215" fill-opacity="null" stroke-opacity="null" stroke-dasharray="2,2" stroke-width="0.7" stroke="#404040" fill="none"/>
+  <line stroke-linecap="round" stroke-linejoin="null" id="svg_227" y2="57.6208" x2="93.26726" y1="57.6208" x1="68.35201" fill-opacity="null" stroke-opacity="null" stroke-dasharray="2,2" stroke-width="0.7" stroke="#404040" fill="none"/>
+  <line stroke-linecap="round" stroke-linejoin="null" id="svg_228" y2="16.43436" x2="93.60625" y1="16.43436" x1="68.35201" fill-opacity="null" stroke-opacity="null" stroke-dasharray="2,2" stroke-width="0.7" stroke="#404040" fill="none"/>
+  <line stroke-linecap="round" stroke-linejoin="null" id="svg_229" y2="16.60385" x2="93.60625" y1="27.95978" x1="93.60625" fill-opacity="null" stroke-opacity="null" stroke-dasharray="2,2" stroke-width="0.7" stroke="#404040" fill="none"/>
+  <line stroke-linecap="round" stroke-linejoin="null" id="svg_230" y2="45.92589" x2="93.60625" y1="57.45131" x1="93.60625" fill-opacity="null" stroke-opacity="null" stroke-dasharray="2,2" stroke-width="0.7" stroke="#404040" fill="none"/>
+  <line stroke-linecap="round" stroke-linejoin="null" id="svg_231" y2="7.79029" x2="165.13167" y1="16.09538" x1="165.13167" fill-opacity="null" stroke-opacity="null" stroke-width="0.7" stroke="#404040" fill="none"/>
+  <line stroke-linecap="round" stroke-linejoin="null" id="svg_232" y2="7.28182" x2="165.13167" y1="10.16317" x1="168.18252" fill-opacity="null" stroke-opacity="null" stroke-width="0.7" stroke="#404040" fill="none"/>
+  <line stroke="#404040" stroke-linecap="round" stroke-linejoin="null" id="svg_233" y2="7.45131" x2="165.13167" y1="10.16317" x1="162.08083" fill-opacity="null" stroke-opacity="null" stroke-width="0.7" fill="none"/>
+  <text xml:space="preserve" text-anchor="start" font-family="'Times New Roman', Times, serif" font-size="7" id="svg_234" y="14.23097" x="158.5215" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#404040" fill="#000000">I</text>
+ </g>
+</svg>

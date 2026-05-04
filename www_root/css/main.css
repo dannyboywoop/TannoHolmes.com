@@ -1,0 +1,81 @@
+/* Main Css for the Website, to be placed first in style sheet links in head of
+each page. More specific style sheet links to be placed below in order of
+granularity */
+
+html{
+  /* Colours */
+  background-color: rgb(255, 255, 255);
+
+  /* Font */
+  font-family: 'Source Code Pro', monospace;
+
+  /*Centering*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+body{
+  /* Colours */
+  background-color: rgb(255, 255, 255);
+
+  /* Borders */
+  border-left: 2px solid rgb(210, 210, 210);
+  border-right: 2px solid rgb(210, 210, 210);
+
+  /* Centering */
+  width: 90%;
+  height: 90%;
+  max-width: 1200px
+}
+
+header{
+  /* Borders */
+  border-bottom: 2px solid rgb(210, 210, 210);
+
+  /* Centering */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%;
+}
+
+nav{
+  /* Borders */
+  border-bottom: 2px solid rgb(210, 210, 210);
+
+  /* Centering */
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  width:  85%;
+  text-align: center;
+}
+
+nav a{
+  display: inline-block;
+  padding-left: 2em;
+  padding-right: 2em;
+  text-decoration: none;
+}
+
+nav a:visited{
+  color: rgb(0, 0, 0);
+}
+
+nav a:hover{
+  color: rgb(100, 100, 100);
+}
+
+main{
+  /* Centering */
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%;
+}
